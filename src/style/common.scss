@@ -1,0 +1,62 @@
+/*import reset*/
+@import url("reset.scss");
+
+/*variables*/
+$primary-light-gray: #f3f4f6;
+$primary-content: #0a0a0a;
+$primary-light-brown: #e5ddd5;
+$primary-gray: #4a5565;
+
+/*content common*/
+.container {
+  width: 90%;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.header {
+  padding: 16px 0;
+  border-bottom: 1px solid $primary-light-gray;
+
+  .header_container {
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      a {
+        color: $primary-content;
+        font-family: "Noto Serif", serif;
+      }
+    }
+
+    .nav {
+      ul {
+        display: flex;
+        gap: 32px;
+
+        li {
+          a {
+            color: $primary-content;
+          }
+        }
+      }
+    }
+
+    .login {
+      display: flex;
+      gap: 16px;
+
+      a {
+        color: $primary-content;
+        font-weight: 600;
+      }
+    }
+  }
+}

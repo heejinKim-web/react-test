@@ -1,1 +1,36 @@
+/*import reset*/
+@import url("reset.scss");
 
+/*variables*/
+$primary-light-gray: #f3f4f6;
+$primary-content: #0a0a0a;
+$primary-light-brown: #e5ddd5;
+$primary-gray: #4a5565;
+
+/*swiper slide*/
+.main_visual {
+  .swiper {
+    .swiper-wrapper {
+      .swiper-slide {
+        width: auto;
+      }
+    }
+  }
+}
+
+.main_big_text {
+  padding: 48px 0;
+  text-align: right;
+
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 72px;
+    color: $primary-content;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  p {
+    color: $primary-gray;
+  }
+}
