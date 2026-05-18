@@ -6,6 +6,7 @@ $primary-light-gray: #f3f4f6;
 $primary-content: #0a0a0a;
 $primary-light-brown: #e5ddd5;
 $primary-gray: #4a5565;
+$footer-gray: #364153;
 
 /*content common*/
 .container {
@@ -20,6 +21,7 @@ $primary-gray: #4a5565;
   clear: both;
 }
 
+/*content header*/
 .header {
   padding: 16px 0;
   border-bottom: 1px solid $primary-light-gray;
@@ -57,6 +59,62 @@ $primary-gray: #4a5565;
         color: $primary-content;
         font-weight: 600;
       }
+    }
+  }
+}
+
+/*content footer*/
+.footer {
+  padding: 64px 0;
+  background: $primary-light-brown;
+
+  .footer_upper {
+    display: flex;
+    width: 100%;
+    margin-bottom: 48px;
+
+    .footer_upper_inner {
+      flex: 1;
+
+      &.logo {
+        .footer_logo {
+          margin-bottom: 16px;
+
+          a {
+            font-size: 24px;
+            color: $primary-content;
+            font-weight: 600;
+          }
+        }
+
+        .brand_text {
+          color: $footer-gray;
+          line-height: 1.5;
+        }
+      }
+
+      .footer_title {
+        color: $primary-content;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      ul {
+        li {
+          color: $primary-gray;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  .footer_downer {
+    padding-top: 30px;
+    border-top: 1px solid #99a1af;
+    text-align: center;
+
+    p {
+      color: $primary-gray;
     }
   }
 }

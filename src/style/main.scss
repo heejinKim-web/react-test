@@ -6,6 +6,7 @@ $primary-light-gray: #f3f4f6;
 $primary-content: #0a0a0a;
 $primary-light-brown: #e5ddd5;
 $primary-gray: #4a5565;
+$footer-gray: #364153;
 
 /*swiper slide*/
 .main_visual {
@@ -32,5 +33,38 @@ $primary-gray: #4a5565;
 
   p {
     color: $primary-gray;
+  }
+}
+
+.goods_list {
+  padding: 0 0 48px 0;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    li {
+      width: calc(20% - 24px);
+
+      .goods_image {
+        margin-bottom: 12px;
+        img {
+          width: 100%;
+        }
+      }
+
+      .goods_content {
+        h2 {
+          color: $primary-content;
+          font-weight: 600;
+          line-height: 1.8;
+        }
+
+        p {
+          color: $primary-gray;
+        }
+      }
+    }
   }
 }
