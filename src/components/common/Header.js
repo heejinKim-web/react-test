@@ -1,8 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../style/common.scss";
 
 const Header = () => {
+  /*HEADER MENU*/
+  const headerMenu = [
+    {
+      menuid: 1,
+      link: "/",
+      menuname: "CASEMAN",
+    },
+    {
+      menuid: 2,
+      link: "/",
+      menuname: "종이박스",
+    },
+    {
+      menuid: 3,
+      link: "/",
+      menuname: "부직포",
+    },
+    {
+      menuid: 4,
+      link: "/",
+      menuname: "쇼핑백/캐리어",
+    },
+    {
+      menuid: 5,
+      link: "/",
+      menuname: "디자인박스",
+    },
+    {
+      menuid: 6,
+      link: "/",
+      menuname: "선물포장",
+    },
+    {
+      menuid: 7,
+      link: "/",
+      menuname: "케이크박스",
+    },
+  ];
+
+  /*hover 시 메뉴*/
+  const [menuId, setMenuId] = useState(0);
+  const menuHover = (i) => {
+    setMenuId(i);
+  };
+
   return (
     <header className="header">
       <div className="container header_container">
@@ -11,27 +56,11 @@ const Header = () => {
         </div>
         <nav className="nav">
           <ul>
-            <li>
-              <Link to="/">CASEMAN</Link>
-            </li>
-            <li>
-              <Link to="/">종이박스</Link>
-            </li>
-            <li>
-              <Link to="/">부직포</Link>
-            </li>
-            <li>
-              <Link to="/">쇼핑백/캐리어</Link>
-            </li>
-            <li>
-              <Link to="/">디자인박스</Link>
-            </li>
-            <li>
-              <Link to="/">선물포장</Link>
-            </li>
-            <li>
-              <Link to="/">케이크박스</Link>
-            </li>
+            {headerMenu.map((menu, index) => (
+              <li key={menu.menuid} onMouseEnter={() => menuHover(menu.menuid)}>
+                <Link to={menu.link}>{menu.menuname}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
         <div className="login">
