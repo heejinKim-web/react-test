@@ -1,0 +1,79 @@
+* {
+  font-family: 
+    // Mac / iOS (애플 산돌고딕)
+    -apple-system,
+    BlinkMacSystemFont,
+    // Windows (맑은 고딕 또는 프리텐다드/눈누 등의 대체 대비 시스템 폰트)
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    // Android / Linux 및 기본 고딕 스택
+    "Noto Sans KR",
+    "Malgun Gothic",
+    sans-serif,
+    // 이모지 깨짐 방지
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+
+  /* 2. 폰트 렌더링을 부드럽게 만들어주는 옵션 (가독성 향상) */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+div,
+section,
+footer,
+aside,
+header,
+main,
+article,
+nav {
+  display: block;
+}
+
+select,
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
