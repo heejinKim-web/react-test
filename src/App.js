@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Hello react!!
+          Hello react!! 나는 리액트를 좋아한다.
         </a>
       </header>
     </div>
