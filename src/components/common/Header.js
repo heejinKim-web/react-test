@@ -46,6 +46,7 @@ const Header = () => {
   const [menuId, setMenuId] = useState(0);
   const menuHover = (i) => {
     setMenuId(i);
+    console.log(i);
   };
 
   return (
@@ -59,6 +60,12 @@ const Header = () => {
             {headerMenu.map((menu, index) => (
               <li key={menu.menuid} onMouseEnter={() => menuHover(menu.menuid)}>
                 <Link to={menu.link}>{menu.menuname}</Link>
+                {menuId === menu.menuid && (
+                  <ul>
+                    {menuId === 1 && <li>1번</li>}
+                    {menuId === 2 && <li>2번</li>}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
