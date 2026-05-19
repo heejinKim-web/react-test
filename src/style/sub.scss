@@ -1,0 +1,286 @@
+/*variables*/
+$primary-light-gray: #f3f4f6;
+$primary-content: #0a0a0a;
+$primary-light-brown: #e5ddd5;
+$primary-gray: #4a5565;
+$footer-gray: #364153;
+
+/*product*/
+.product {
+  .product_upper_frame {
+    padding-top: 32px;
+    margin-bottom: 48px;
+    display: flex;
+    gap: 32px;
+
+    .product_thumbnail_slider {
+      width: calc(50% - 32px);
+
+      .productSwiper {
+        .swiper-slide {
+          aspect-ratio: 1/1;
+          overflow: hidden;
+          border-radius: 10px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+          }
+        }
+      }
+
+      .productSwiper2 {
+        margin-top: 16px;
+        .swiper-slide {
+          aspect-ratio: 1/1;
+          overflow: hidden;
+          border-radius: 10px;
+
+          &.swiper-slide-thumb-active {
+            border: 1px solid $primary-content;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+          }
+        }
+      }
+    }
+
+    .product_shop_buy {
+      width: calc(50% - 32px);
+
+      .product_shop_buy_upper {
+        .product_stars {
+          display: flex;
+          gap: 8px;
+          margin-bottom: 8px;
+
+          .stars {
+            display: flex;
+            gap: 4px;
+          }
+        }
+
+        .product_name_box {
+          margin-bottom: 24px;
+
+          h1 {
+            color: $primary-content;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 8px;
+          }
+
+          p {
+            font-size: 16px;
+            color: $primary-gray;
+          }
+        }
+
+        .product_price {
+          margin-bottom: 24px;
+          padding: 17px 0;
+          border-top: 1px solid #e5e7eb;
+          border-bottom: 1px solid #e5e7eb;
+
+          .sale_percent {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+
+            .origin_price {
+              color: $primary-gray;
+              text-decoration-line: line-through;
+            }
+
+            .percent {
+              color: #e7000b;
+              font-weight: 700;
+              font-size: 18px;
+            }
+          }
+
+          .saled_price {
+            margin-top: 4px;
+            line-height: 1.8;
+            font-size: 30px;
+            color: $primary-content;
+            font-weight: 700;
+          }
+        }
+
+        .shipping {
+          margin-bottom: 16px;
+
+          .ship_title {
+            color: $primary-content;
+            margin-bottom: 8px;
+            font-weight: 500;
+          }
+
+          .ship_price {
+            color: $primary-gray;
+          }
+        }
+
+        .color_picker {
+          margin-bottom: 16px;
+          .color_pick_title {
+            color: $primary-content;
+            font-weight: 500;
+            margin-bottom: 8px;
+          }
+
+          .color_pick_module {
+            display: flex;
+            gap: 8px;
+            li {
+              width: 48px;
+              height: 48px;
+              background: gray;
+              border-radius: 100%;
+            }
+          }
+        }
+
+        .size_input {
+          margin-bottom: 16px;
+          .size_input_title {
+            color: $primary-content;
+            font-weight: 500;
+            margin-bottom: 8px;
+          }
+
+          .size_inputbox {
+            height: 47px;
+            border-radius: 10px;
+            border: 1px solid $primary-light-gray;
+            width: 100%;
+            padding: 0 18px;
+          }
+        }
+
+        .product_count {
+          margin-bottom: 24px;
+          .product_count_title {
+            color: $primary-content;
+            font-weight: 500;
+            margin-bottom: 8px;
+          }
+
+          .product_count_module {
+            display: flex;
+            gap: 12px;
+
+            .count_button {
+              width: 38px;
+              height: 38px;
+              line-height: 30px;
+              border-radius: 10px;
+              border: 1px solid $primary-light-gray;
+              background: #fff;
+              font-size: 18px;
+            }
+
+            .count_number {
+              font-size: 16px;
+              color: $primary-content;
+              width: 48px;
+              line-height: 38px;
+              text-align: center;
+            }
+          }
+        }
+
+        .total_price {
+          padding: 16px 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-top: 1px solid #e5e7eb;
+
+          .total_price_title {
+            font-size: 18px;
+            color: $primary-content;
+          }
+
+          .total_price_number {
+            color: #e7000b;
+            font-size: 24px;
+            font-weight: 700;
+          }
+        }
+
+        .shop_buy_buttons {
+          display: flex;
+          gap: 12px;
+          margin-bottom: 12px;
+
+          button {
+            border-radius: 10px;
+            padding: 16px 0;
+            width: calc(50% - 12px);
+            font-size: 16px;
+          }
+
+          .cart_button {
+            border: 1px solid #d1d5dc;
+            background: #fff;
+            color: $primary-content;
+          }
+
+          .buy_button {
+            background: #000;
+            color: #fff;
+            border: none;
+          }
+        }
+
+        .shop_share_buttons {
+          display: flex;
+          gap: 12px;
+
+          button {
+            padding: 12px 0;
+            border-radius: 10px;
+            border: 1px solid #d1d5dc;
+            background: #fff;
+            width: calc(50% - 12px);
+
+            p {
+              display: flex;
+              justify-content: center;
+              width: 100%;
+              align-items: center;
+              gap: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .product_tab_frame {
+    padding-bottom: 48px;
+
+    .product_tabs {
+      ul {
+        display: flex;
+        gap: 32px;
+
+        .tab {
+          padding-bottom: 17px;
+          color: $primary-content;
+          cursor: pointer;
+
+          &.active {
+            border-bottom: 2px solid $primary-content;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

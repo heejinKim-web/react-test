@@ -5,11 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import Main from "./components/Main";
+import Product from "./components/Product";
 
 const router = createHashRouter([
   {
     path: "/",
     element: <Main />,
+  },
+  {
+    path: "/product",
+    element: <Product />,
   },
 ]);
 
