@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
@@ -20,6 +20,22 @@ const Main = () => {
 
   /*main 상품 데이터 가져오기*/
   const mainGoodsItems = dummyData.mainGoods;
+
+  /*mobile 구분*/
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+  }, []);
+
+  let goodsCount = 10;
+  if (isMobile) {
+    goodsCount = 5;
+  }
 
   return (
     <div className="main">
@@ -60,7 +76,7 @@ const Main = () => {
         </div>
         <div className="goods_list">
           <ul>
-            {mainGoodsItems.slice(0, 10).map((good, index) => (
+            {mainGoodsItems.slice(0, goodsCount).map((good, index) => (
               <li key={index}>
                 <Link to={good.link}>
                   <div className="goods_image">

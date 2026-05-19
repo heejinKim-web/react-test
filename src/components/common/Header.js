@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../style/common.scss";
 
@@ -44,26 +44,114 @@ const Header = () => {
 
   /*hover 시 메뉴*/
   const [menuId, setMenuId] = useState(0);
-  const menuHover = (i) => {
-    setMenuId(i);
-    console.log(i);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  //mobile pc 구분
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+  }, []);
+
+  //menu hover
+  const menuHover = (id) => {
+    if (!isMobile) setMenuId(id);
+  };
+
+  /*header mouseleave*/
+  const menuMouseLeave = () => {
+    if (!isMobile) setMenuId(0);
+  };
+
+  // 모바일에서만 작동할 클릭 이벤트
+  const menuClick = (e, id) => {
+    if (isMobile) {
+      e.preventDefault();
+      setMenuId(menuId === id ? 0 : id);
+    }
   };
 
   return (
-    <header className="header">
-      <div className="container header_container">
+    <header className="header" onMouseLeave={menuMouseLeave}>
+      <div
+        className={`container header_container ${isMobileMenuOpen ? "nav_open" : ""}`}
+      >
         <div className="logo">
           <Link to="/">CASEMAN</Link>
         </div>
+
         <nav className="nav">
-          <ul>
+          <ul className="main_menu">
             {headerMenu.map((menu, index) => (
-              <li key={menu.menuid} onMouseEnter={() => menuHover(menu.menuid)}>
-                <Link to={menu.link}>{menu.menuname}</Link>
+              <li
+                key={menu.menuid}
+                onMouseEnter={() => menuHover(menu.menuid)}
+                className={menuId === menu.menuid ? "active" : ""}
+              >
+                <Link to={menu.link} onClick={(e) => menuClick(e, menu.menuid)}>
+                  {menu.menuname}
+                </Link>
                 {menuId === menu.menuid && (
-                  <ul>
-                    {menuId === 1 && <li>1번</li>}
-                    {menuId === 2 && <li>2번</li>}
+                  <ul class="sub_menu">
+                    {menuId === 2 && (
+                      <>
+                        <li>
+                          <Link to="/">종이박스</Link>
+                        </li>
+                        <li>
+                          <Link to="/">화이트 박스</Link>
+                        </li>
+                        <li>
+                          <Link to="/">컬러 박스</Link>
+                        </li>
+                        <li>
+                          <Link to="/">골판지 박스</Link>
+                        </li>
+                      </>
+                    )}
+                    {menuId === 3 && (
+                      <>
+                        <li>
+                          <Link to="/">부직포 가방</Link>
+                        </li>
+                        <li>
+                          <Link to="/">부직포 파우치</Link>
+                        </li>
+                        <li>
+                          <Link to="/">부직포 포장지</Link>
+                        </li>
+                      </>
+                    )}
+                    {menuId === 5 && (
+                      <>
+                        <li>
+                          <Link to="/">프리미엄 박스</Link>
+                        </li>
+                        <li>
+                          <Link to="/">럭셔리 박스</Link>
+                        </li>
+                        <li>
+                          <Link to="/">커스텀 박스</Link>
+                        </li>
+                      </>
+                    )}
+                    {menuId === 6 && (
+                      <>
+                        <li>
+                          <Link to="/">리본</Link>
+                        </li>
+                        <li>
+                          <Link to="/">포장지</Link>
+                        </li>
+                        <li>
+                          <Link to="/">스티커</Link>
+                        </li>
+                      </>
+                    )}
                   </ul>
                 )}
               </li>
@@ -71,6 +159,16 @@ const Header = () => {
           </ul>
         </nav>
         <div className="login">
+          {/* 햄버거 버튼 (모바일에서만 보임) */}
+          <button
+            className={`hamburger ${isMobileMenuOpen ? "nav_open" : ""}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
           <Link to="/">로그인</Link>
           <Link to="/">장바구니</Link>
         </div>
