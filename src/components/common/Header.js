@@ -7,37 +7,37 @@ const Header = () => {
   const headerMenu = [
     {
       menuid: 1,
-      link: "/",
+      link: "/product",
       menuname: "CASEMAN",
     },
     {
       menuid: 2,
-      link: "/",
+      link: "/product",
       menuname: "종이박스",
     },
     {
       menuid: 3,
-      link: "/",
+      link: "/product",
       menuname: "부직포",
     },
     {
       menuid: 4,
-      link: "/",
+      link: "/product",
       menuname: "쇼핑백/캐리어",
     },
     {
       menuid: 5,
-      link: "/",
+      link: "/product",
       menuname: "디자인박스",
     },
     {
       menuid: 6,
-      link: "/",
+      link: "/product",
       menuname: "선물포장",
     },
     {
       menuid: 7,
-      link: "/",
+      link: "/product",
       menuname: "케이크박스",
     },
   ];
