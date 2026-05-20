@@ -39,7 +39,32 @@ const Product = () => {
 
   /*dummyData 데이터 가져오기*/
   const [shopData, setShopData] = useState(ShopData);
+
+  /*swiper slide img*/
   const slideImg = shopData.productData[0].productImg;
+
+  /*color picker*/
+  const productColors = shopData.productData[0].colorPicks;
+  const [colorId, setColorId] = useState(0);
+  const colorPick = (i) => {
+    setColorId(i);
+  };
+
+  /*count*/
+  const [count, setCount] = useState(1);
+  const onClickMinus = (e) => {
+    e.preventDefault();
+    if (count !== 0) {
+      setCount(count - 1);
+    } else {
+      setCount(0);
+    }
+  };
+
+  const onClickPlus = (e) => {
+    e.preventDefault();
+    setCount(count + 1);
+  };
 
   return (
     <div className="product">
@@ -120,10 +145,14 @@ const Product = () => {
                 <div className="color_picker">
                   <p className="color_pick_title">색상</p>
                   <ul className="color_pick_module">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    {productColors?.map((color, index) => (
+                      <li
+                        class={`${colorId === index ? "active" : ""}`}
+                        key={index}
+                        style={{ backgroundColor: color }}
+                        onClick={() => colorPick(index)}
+                      ></li>
+                    ))}
                   </ul>
                 </div>
                 <div className="size_input">
@@ -137,9 +166,16 @@ const Product = () => {
                 <div className="product_count">
                   <p className="product_count_title">수량</p>
                   <div className="product_count_module">
-                    <button className="count_button minus">-</button>
-                    <span className="count_number">1</span>
-                    <button className="count_button plus">+</button>
+                    <button
+                      className="count_button minus"
+                      onClick={onClickMinus}
+                    >
+                      -
+                    </button>
+                    <span className="count_number">{count}</span>
+                    <button className="count_button plus" onClick={onClickPlus}>
+                      +
+                    </button>
                   </div>
                 </div>
                 <div className="total_price">
@@ -178,7 +214,7 @@ const Product = () => {
         </div>
         <div className="product_tab_frame">
           <div className="product_tabs">
-            <ul>
+            <ul className="tab_list">
               {tabs.map((tab, index) => (
                 <li
                   className={`tab ${tabid === tab.tabid ? "active" : ""}`}
@@ -189,7 +225,51 @@ const Product = () => {
                 </li>
               ))}
             </ul>
-            {tabid === 1 && <div>1</div>}
+            {tabid === 1 && (
+              <div className="tab_product_info">
+                <div className="product_info_title">
+                  <h2>심플한 디자인, 다양한 활용</h2>
+                  <p>
+                    깔끔한 디자인으로 어디에나 잘 어울리는 로우박스입니다.
+                    <br />
+                    다양한 크기와 색상으로 나만의 수납공간을 만들어보세요.
+                  </p>
+                </div>
+                <div className="product_info_photo">
+                  <div className="photo1">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/image/product/info_1.png`}
+                    />
+                  </div>
+                  <div className="photo2">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/image/product/info_2.png`}
+                    />
+                  </div>
+                </div>
+                <div className="product_info_footer">
+                  <p className="title">제품 사양</p>
+                  <ul className="product_info_list">
+                    <li>
+                      <span>재질</span>
+                      <p>PP, ABS</p>
+                    </li>
+                    <li>
+                      <span>원산지</span>
+                      <p>대한민국</p>
+                    </li>
+                    <li>
+                      <span>제조사</span>
+                      <p>케이스맨</p>
+                    </li>
+                    <li>
+                      <span>KC인증</span>
+                      <p>CB063R123-0001</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
             {tabid === 2 && <div>2</div>}
             {tabid === 3 && <div>3</div>}
             {tabid === 4 && <div>4</div>}
