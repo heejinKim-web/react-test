@@ -105,7 +105,7 @@ const Product = () => {
             </Swiper>
           </div>
           <div className="product_shop_buy">
-            <form action="/#/order">
+            <form action="/react-test/#/order">
               <div className="product_shop_buy_upper">
                 <div className="product_stars">
                   <ul className="stars">
