@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
 import "../style/sub.scss";
@@ -9,6 +9,22 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { ShopData } from "../DummyData/ShopData";
 
 const Product = () => {
+  const pageRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (pageRef.current) {
+        pageRef.current.scrollTo(0, 0);
+      }
+
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTo(0, 0);
+      document.body.scrollTo(0, 0);
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   /*swiper*/
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -67,7 +83,7 @@ const Product = () => {
   };
 
   return (
-    <div className="product">
+    <div className="product" ref={pageRef}>
       <Header />
       <div className="container">
         <div className="product_upper_frame">
@@ -147,7 +163,7 @@ const Product = () => {
                   <ul className="color_pick_module">
                     {productColors?.map((color, index) => (
                       <li
-                        class={`${colorId === index ? "active" : ""}`}
+                        className={`${colorId === index ? "active" : ""}`}
                         key={index}
                         style={{ backgroundColor: color }}
                         onClick={() => colorPick(index)}

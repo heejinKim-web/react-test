@@ -1,24 +1,17 @@
-import logo from "./logo.svg";
-import "./App.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "./components/Main";
+import Product from "./components/Product";
+import Order from "./components/Order";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hello react!! 나는 리액트를 좋아한다.
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/order" element={<Order />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
