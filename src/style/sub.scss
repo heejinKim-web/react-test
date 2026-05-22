@@ -6,7 +6,7 @@
   .product_upper_frame {
     padding-top: 32px;
     margin-bottom: 48px;
-    @include flex_set(32px);
+    @include flex_set(flex-start, flex-start, 32px);
 
     .product_thumbnail_slider {
       width: calc(50% - 32px);
@@ -208,7 +208,7 @@
         }
 
         .shop_buy_buttons {
-          @include flex_set(12px);
+          @include flex_set(flex-start, flex-start, 12px);
           margin-bottom: 12px;
 
           button {
@@ -232,7 +232,7 @@
         }
 
         .shop_share_buttons {
-          @include flex_set(12px);
+          @include flex_set(flex-start, flex-start, 12px);
 
           button {
             padding: 12px 0;
@@ -631,8 +631,7 @@
 
       .order_agreement_check {
         padding-bottom: 12px;
-        gap: 8px;
-        @include flex_set(flex-start, center);
+        @include flex_set(flex-start, center, 8px);
         border-bottom: 1px solid $primary-semilight-gray;
 
         input {
