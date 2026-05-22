@@ -17,6 +17,13 @@
   padding: 4px 12px;
 }
 
+@mixin flex_set($justify: flex-start, $align: flex-start, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
 /*variables*/
 $primary-light-gray: #f3f4f6;
 $primary-semilight-gray: #d1d5dc;
@@ -30,8 +37,7 @@ $footer-gray: #364153;
   .product_upper_frame {
     padding-top: 32px;
     margin-bottom: 48px;
-    display: flex;
-    gap: 32px;
+    @include flex_set(32px);
 
     .product_thumbnail_slider {
       width: calc(50% - 32px);
@@ -73,8 +79,7 @@ $footer-gray: #364153;
 
       .product_shop_buy_upper {
         .product_stars {
-          display: flex;
-          gap: 8px;
+          @include flex_set(8px);
           margin-bottom: 8px;
 
           .stars {
@@ -106,8 +111,7 @@ $footer-gray: #364153;
           border-bottom: 1px solid #e5e7eb;
 
           .sale_percent {
-            display: flex;
-            gap: 12px;
+            @include flex_set(12px);
             align-items: center;
 
             .origin_price {
@@ -154,8 +158,7 @@ $footer-gray: #364153;
           }
 
           .color_pick_module {
-            display: flex;
-            gap: 8px;
+            @include flex_set(8px);
             li {
               width: 48px;
               height: 48px;
@@ -196,8 +199,7 @@ $footer-gray: #364153;
           }
 
           .product_count_module {
-            display: flex;
-            gap: 12px;
+            @include flex_set(12px);
 
             .count_button {
               width: 38px;
@@ -221,9 +223,7 @@ $footer-gray: #364153;
 
         .total_price {
           padding: 16px 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          @include flex_set(space-between, center);
           border-top: 1px solid #e5e7eb;
 
           .total_price_title {
@@ -239,8 +239,7 @@ $footer-gray: #364153;
         }
 
         .shop_buy_buttons {
-          display: flex;
-          gap: 12px;
+          @include flex_set(12px);
           margin-bottom: 12px;
 
           button {
@@ -264,8 +263,7 @@ $footer-gray: #364153;
         }
 
         .shop_share_buttons {
-          display: flex;
-          gap: 12px;
+          @include flex_set(12px);
 
           button {
             padding: 12px 0;
@@ -275,11 +273,8 @@ $footer-gray: #364153;
             width: calc(50% - 12px);
 
             p {
-              display: flex;
-              justify-content: center;
+              @include flex_set(center, center, 8px);
               width: 100%;
-              align-items: center;
-              gap: 8px;
             }
           }
         }
@@ -328,10 +323,7 @@ $footer-gray: #364153;
       }
 
       .product_info_photo {
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-        align-items: center;
+        @include flex_set(center, center, 16px);
         margin: 32px 0;
 
         div {
@@ -356,7 +348,7 @@ $footer-gray: #364153;
 
         .product_info_list {
           li {
-            display: flex;
+            @include flex_set;
             margin-bottom: 8px;
 
             span {
@@ -428,8 +420,7 @@ $footer-gray: #364153;
         }
 
         .input_div_inner {
-          display: flex;
-          gap: 8px;
+          @include flex_set(8px);
           margin-bottom: 8px;
 
           &:last-child {
@@ -494,8 +485,7 @@ $footer-gray: #364153;
       }
 
       .order_coupon_title {
-        display: flex;
-        justify-content: space-between;
+        @include flex_set(space-between);
 
         h2 {
           @include cell_title;
@@ -526,9 +516,7 @@ $footer-gray: #364153;
       }
 
       .checkbox_div {
-        display: flex;
-        gap: 8px;
-        align-items: center;
+        @include flex_set(flex-start, center, 16px);
         margin-bottom: 12px;
 
         &:last-child {
@@ -574,9 +562,7 @@ $footer-gray: #364153;
 
       .order_goods_list {
         .order_goods_list_cell {
-          display: flex;
-          align-items: center;
-          gap: 16px;
+          @include flex_set(flex-start, center, 16px);
           padding: 16px 0;
           border-bottom: 1px solid $primary-semilight-gray;
 
@@ -613,10 +599,8 @@ $footer-gray: #364153;
       .order_price_list {
         ul {
           li {
-            display: flex;
             margin-bottom: 12px;
-            justify-content: space-between;
-
+            @include flex_set(space-between, flex-start);
             .order_price_cate {
               color: $primary-gray;
             }
@@ -629,9 +613,7 @@ $footer-gray: #364153;
       }
 
       .order_price_total {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex_set(space-between, center);
         padding-top: 12px;
         border-top: 1px solid $primary-semilight-gray;
       }
@@ -645,8 +627,7 @@ $footer-gray: #364153;
 
       .payment_radio_list {
         li {
-          display: flex;
-          align-items: center;
+          @include flex_set(flex-start, center);
           margin-bottom: 24px;
           gap: 8px;
 
@@ -681,9 +662,8 @@ $footer-gray: #364153;
 
       .order_agreement_check {
         padding-bottom: 12px;
-        display: flex;
         gap: 8px;
-        align-items: center;
+        @include flex_set(flex-start, center);
         border-bottom: 1px solid $primary-semilight-gray;
 
         input {
