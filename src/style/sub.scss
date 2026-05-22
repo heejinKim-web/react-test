@@ -1,36 +1,5 @@
-/*mixin*/
-@mixin cell_title {
-  font-size: 18px;
-  color: $primary-content;
-  font-weight: 500;
-
-  @media (max-width: 500px) {
-    font-size: 16px;
-  }
-}
-
-@mixin input_style {
-  background: $primary-light-gray;
-  border-radius: 8px;
-  border: 1px solid #fff;
-  height: 36px;
-  padding: 4px 12px;
-}
-
-@mixin flex_set($justify: flex-start, $align: flex-start, $gap: 0) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-  gap: $gap;
-}
-
-/*variables*/
-$primary-light-gray: #f3f4f6;
-$primary-semilight-gray: #d1d5dc;
-$primary-content: #0a0a0a;
-$primary-light-brown: #e5ddd5;
-$primary-gray: #4a5565;
-$footer-gray: #364153;
+@import "mixins";
+@import "variables";
 
 /*product*/
 .product {
