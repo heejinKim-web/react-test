@@ -9,7 +9,14 @@ const Order = () => {
   ];
 
   const [id, setId] = useState(0);
+  const [active, setActive] = useState(false);
+
   const accorClick = (i) => {
+    if (active === true) {
+      setActive(false);
+    } else {
+      setActive(true);
+    }
     setId(i);
   };
 
@@ -208,7 +215,7 @@ const Order = () => {
           <div className="agreement_accordion">
             {accordions.map((acc, index) => (
               <div
-                className={`accordion ${id === acc.id ? "active" : ""}`}
+                className={`accordion ${id === acc.id && active === true ? "active" : ""}`}
                 key={acc.id}
                 onClick={() => accorClick(acc.id)}
               >

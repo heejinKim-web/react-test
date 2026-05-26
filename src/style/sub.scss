@@ -80,8 +80,7 @@
           border-bottom: 1px solid #e5e7eb;
 
           .sale_percent {
-            @include flex_set(12px);
-            align-items: center;
+            @include flex_set(flex-start, center, 12px);
 
             .origin_price {
               color: $primary-gray;
@@ -127,7 +126,7 @@
           }
 
           .color_pick_module {
-            @include flex_set(8px);
+            @include flex_set(flex-start, flex-start, 8px);
             li {
               width: 48px;
               height: 48px;
@@ -168,7 +167,7 @@
           }
 
           .product_count_module {
-            @include flex_set(12px);
+            @include flex_set(flex-start, flex-start, 12px);
 
             .count_button {
               width: 38px;
@@ -256,8 +255,7 @@
 
     .product_tabs {
       .tab_list {
-        display: flex;
-        gap: 32px;
+        @include flex_set(flex-start, flex-start, 32px);
 
         .tab {
           padding-bottom: 17px;
@@ -389,7 +387,7 @@
         }
 
         .input_div_inner {
-          @include flex_set(8px);
+          @include flex_set(flex-start, flex-start, 8px);
           margin-bottom: 8px;
 
           &:last-child {
