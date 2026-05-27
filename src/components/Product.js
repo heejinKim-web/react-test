@@ -55,12 +55,13 @@ const Product = () => {
 
   /*dummyData 데이터 가져오기*/
   const [shopData, setShopData] = useState(ShopData);
+  const productInfo = shopData.productData[0];
 
   /*swiper slide img*/
-  const slideImg = shopData.productData[0].productImg;
+  const slideImg = productInfo.productImg;
 
   /*color picker*/
-  const productColors = shopData.productData[0].colorPicks;
+  const productColors = productInfo.colorPicks;
   const [colorId, setColorId] = useState(0);
   const colorPick = (i) => {
     setColorId(i);
@@ -149,14 +150,21 @@ const Product = () => {
                 </div>
                 <div className="product_price">
                   <p className="sale_percent">
-                    <span className="origin_price">29,000원</span>
-                    <span className="percent">30%</span>
+                    <span className="origin_price">
+                      {productInfo.originPrice.toLocaleString()}원
+                    </span>
+                    <span className="percent">{productInfo.saleRate}%</span>
                   </p>
-                  <p className="saled_price">20,300원</p>
+                  <p className="saled_price">
+                    {productInfo.salePrice.toLocaleString()}원
+                  </p>
                 </div>
                 <div className="shipping">
                   <p className="ship_title">배송비</p>
-                  <p className="ship_price">3,000원 (50,000원 이상 무료배송)</p>
+                  <p className="ship_price">
+                    {productInfo.shipPrice.toLocaleString()}원 (50,000원 이상
+                    무료배송)
+                  </p>
                 </div>
                 <div className="color_picker">
                   <p className="color_pick_title">색상</p>
@@ -196,7 +204,9 @@ const Product = () => {
                 </div>
                 <div className="total_price">
                   <p className="total_price_title">총 상품금액</p>
-                  <p className="total_price_number">20,300원</p>
+                  <p className="total_price_number">
+                    {productInfo.totalPrice.toLocaleString()}원
+                  </p>
                 </div>
                 <div className="shop_buy_buttons">
                   <button className="cart_button">장바구니</button>
