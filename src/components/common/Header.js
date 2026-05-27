@@ -100,55 +100,55 @@ const Header = () => {
                     {menuId === 2 && (
                       <>
                         <li>
-                          <Link to="/">종이박스</Link>
+                          <Link to="/product">종이박스</Link>
                         </li>
                         <li>
-                          <Link to="/">화이트 박스</Link>
+                          <Link to="/product">화이트 박스</Link>
                         </li>
                         <li>
-                          <Link to="/">컬러 박스</Link>
+                          <Link to="/product">컬러 박스</Link>
                         </li>
                         <li>
-                          <Link to="/">골판지 박스</Link>
+                          <Link to="/product">골판지 박스</Link>
                         </li>
                       </>
                     )}
                     {menuId === 3 && (
                       <>
                         <li>
-                          <Link to="/">부직포 가방</Link>
+                          <Link to="/product">부직포 가방</Link>
                         </li>
                         <li>
-                          <Link to="/">부직포 파우치</Link>
+                          <Link to="/product">부직포 파우치</Link>
                         </li>
                         <li>
-                          <Link to="/">부직포 포장지</Link>
+                          <Link to="/product">부직포 포장지</Link>
                         </li>
                       </>
                     )}
                     {menuId === 5 && (
                       <>
                         <li>
-                          <Link to="/">프리미엄 박스</Link>
+                          <Link to="/product">프리미엄 박스</Link>
                         </li>
                         <li>
-                          <Link to="/">럭셔리 박스</Link>
+                          <Link to="/product">럭셔리 박스</Link>
                         </li>
                         <li>
-                          <Link to="/">커스텀 박스</Link>
+                          <Link to="/product">커스텀 박스</Link>
                         </li>
                       </>
                     )}
                     {menuId === 6 && (
                       <>
                         <li>
-                          <Link to="/">리본</Link>
+                          <Link to="/product">리본</Link>
                         </li>
                         <li>
-                          <Link to="/">포장지</Link>
+                          <Link to="/product">포장지</Link>
                         </li>
                         <li>
-                          <Link to="/">스티커</Link>
+                          <Link to="/product">스티커</Link>
                         </li>
                       </>
                     )}
