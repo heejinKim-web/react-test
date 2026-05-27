@@ -296,9 +296,84 @@ const Product = () => {
                 </div>
               </div>
             )}
-            {tabid === 2 && <div>2</div>}
-            {tabid === 3 && <div>3</div>}
-            {tabid === 4 && <div>4</div>}
+            {tabid === 2 && (
+              <div className="tab_shipment_info">
+                <h2>배송 안내</h2>
+                <ul>
+                  <li>- 배송비: 3,000원 (50,000원 이상 구매시 무료배송)</li>
+                  <li>- 배송기간: 평균 2-3일 (주말, 공휴일 제외)</li>
+                  <li>
+                    - 제주도 및 도서산간 지역은 추가 배송비가 발생할 수
+                    있습니다.
+                  </li>
+                </ul>
+              </div>
+            )}
+            {tabid === 3 && (
+              <div className="tab_review_info">
+                <div className="review_cell">
+                  <div className="review_cell_upper">
+                    <ul className="review_cell_stars">
+                      <li>
+                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
+                      </li>
+                      <li>
+                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
+                      </li>
+                      <li>
+                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
+                      </li>
+                      <li>
+                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
+                      </li>
+                      <li>
+                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
+                      </li>
+                    </ul>
+                    <p className="review_cell_name">김**</p>
+                    <p className="review_cell_date">2024.05.15</p>
+                  </div>
+                  <div className="review_cell_down">
+                    <p className="review_content">
+                      정리정돈하기 너무 좋아요. 색상도 예쁘고 튼튼합니다!
+                    </p>
+                  </div>
+                </div>
+                <div className="review_cell">
+                  <div className="review_cell_upper">
+                    <ul className="review_cell_stars">
+                      <li>
+                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
+                      </li>
+                      <li>
+                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
+                      </li>
+                      <li>
+                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
+                      </li>
+                      <li>
+                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
+                      </li>
+                      <li>
+                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
+                      </li>
+                    </ul>
+                    <p className="review_cell_name">김**</p>
+                    <p className="review_cell_date">2024.05.15</p>
+                  </div>
+                  <div className="review_cell_down">
+                    <p className="review_content">
+                      정리정돈하기 너무 좋아요. 색상도 예쁘고 튼튼합니다!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+            {tabid === 4 && (
+              <div className="tab_question">
+                <p className="empty">등록된 문의가 없습니다.</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -192,7 +192,7 @@
         .total_price {
           padding: 16px 0;
           @include flex_set(space-between, center);
-          border-top: 1px solid #e5e7eb;
+          border-top: 1px solid $primary-semilight-gray;
 
           .total_price_title {
             font-size: 18px;
@@ -333,6 +333,67 @@
             }
           }
         }
+      }
+    }
+
+    .tab_shipment_info {
+      padding: 48px 0;
+      h2 {
+        font-size: 18px;
+        color: $primary-content;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      ul {
+        li {
+          color: $primary-gray;
+          margin-bottom: 8px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .tab_review_info {
+      padding: 48px 0;
+
+      .review_cell {
+        padding: 16px 0;
+        border-bottom: 1px solid $primary-semilight-gray;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        .review_cell_upper {
+          @include flex_set(flex-start, flex-start, 8px);
+          margin-bottom: 8px;
+
+          .review_cell_stars {
+            @include flex_set(flex-start, flex-start, 4px);
+          }
+
+          .review_cell_name {
+            font-weight: 600;
+          }
+
+          .review_cell_date {
+            color: $primary-gray;
+          }
+        }
+      }
+    }
+
+    .tab_question {
+      padding: 48px 0;
+      text-align: center;
+
+      .empty {
+        font-size: 16px;
+        color: $primary-gray;
       }
     }
   }
