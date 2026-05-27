@@ -34,7 +34,7 @@ const Main = () => {
 
   let goodsCount = 10;
   if (isMobile) {
-    goodsCount = 5;
+    goodsCount = 6;
   }
 
   return (

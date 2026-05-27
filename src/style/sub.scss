@@ -48,7 +48,7 @@
 
       .product_shop_buy_upper {
         .product_stars {
-          @include flex_set(8px);
+          @include flex_set(flex-start, flex-start, 8px);
           margin-bottom: 8px;
 
           .stars {
@@ -76,8 +76,8 @@
         .product_price {
           margin-bottom: 24px;
           padding: 17px 0;
-          border-top: 1px solid #e5e7eb;
-          border-bottom: 1px solid #e5e7eb;
+          border-top: 1px solid $primary-semilight-gray;
+          border-bottom: 1px solid $primary-semilight-gray;
 
           .sale_percent {
             @include flex_set(flex-start, center, 12px);
@@ -88,7 +88,7 @@
             }
 
             .percent {
-              color: #e7000b;
+              color: $primary-red;
               font-weight: 700;
               font-size: 18px;
             }
@@ -200,7 +200,7 @@
           }
 
           .total_price_number {
-            color: #e7000b;
+            color: $primary-red;
             font-size: 24px;
             font-weight: 700;
           }
@@ -219,13 +219,13 @@
 
           .cart_button {
             border: 1px solid $primary-semilight-gray;
-            background: #fff;
+            background: $primary-white;
             color: $primary-content;
           }
 
           .buy_button {
-            background: #000;
-            color: #fff;
+            background: $primary-content;
+            color: $primary-white;
             border: none;
           }
         }
@@ -413,7 +413,7 @@
 
           .order_button {
             padding: 0 16px;
-            background: #fff;
+            background: $primary-white;
             border-radius: 8px;
             border: 1px solid $primary-light-gray;
             height: 36px;
@@ -452,7 +452,7 @@
       }
 
       .order_coupon_title {
-        @include flex_set(space-between);
+        @include flex_set(space-between, flex-start);
 
         h2 {
           @include cell_title;

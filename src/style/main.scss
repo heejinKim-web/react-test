@@ -75,10 +75,8 @@
 
   .goods_list {
     ul {
-      display: block;
-
       li {
-        width: 100%;
+        width: calc(50% - 12px);
         margin-bottom: 16px;
       }
     }
