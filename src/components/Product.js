@@ -83,6 +83,17 @@ const Product = () => {
     setCount(count + 1);
   };
 
+  /*찜하기*/
+  const [jjim, setJjim] = useState(false);
+  const onClickJjim = (e) => {
+    e.preventDefault();
+    if(!jjim){
+      setJjim(true);
+    }else{
+      setJjim(false);
+    }
+  } 
+
   return (
     <div className="product" ref={pageRef}>
       <Header />
@@ -213,11 +224,11 @@ const Product = () => {
                   <button className="buy_button">구매하기</button>
                 </div>
                 <div className="shop_share_buttons">
-                  <button className="pick_share">
+                  <button className="pick_share" onClick={onClickJjim}>
                     <p>
                       <span>
                         <img
-                          src={`${process.env.PUBLIC_URL}/image/heart.svg`}
+                          src={jjim ? `${process.env.PUBLIC_URL}/image/heart-selected.svg` : `${process.env.PUBLIC_URL}/image/heart.svg`}
                         />
                       </span>
                       찜하기
