@@ -87,7 +87,7 @@ const Main = () => {
                   </div>
                   <div className="goods_content">
                     <h2>{good.goodsName}</h2>
-                    <p>{good.price}원</p>
+                    <p>{good.price.toLocaleString()}원</p>
                   </div>
                 </Link>
               </li>
