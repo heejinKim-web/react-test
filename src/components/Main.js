@@ -51,7 +51,7 @@ const Main = () => {
             disableOnInteraction: false,
           }}
         >
-          {mainSliderItems.slice(0, 6).map((item, index) => (
+          {mainSliderItems?.slice(0, 6).map((item, index) => (
             <SwiperSlide key={index}>
               <Link to={item.link}>
                 <img
@@ -76,7 +76,7 @@ const Main = () => {
         </div>
         <div className="goods_list">
           <ul>
-            {mainGoodsItems.slice(0, goodsCount).map((good, index) => (
+            {mainGoodsItems?.slice(0, goodsCount).map((good, index) => (
               <li key={index}>
                 <Link to={good.link}>
                   <div className="goods_image">

@@ -317,7 +317,7 @@ const Product = () => {
             )}
             {tabid === 3 && (
               <div className="tab_review_info">
-                {productInfo.reviews.map((review, index) => (
+                {productInfo.reviews?.map((review, index) => (
                   <div className="review_cell" key={index}>
                     <div className="review_cell_upper">
                       <ul className="review_cell_stars">
