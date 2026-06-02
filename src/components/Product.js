@@ -138,7 +138,7 @@ const Product = () => {
                 <div className="product_stars">
                   <ul className="stars">
                     {Array.from({length : productInfo.stars}).map((_, index) => (
-                      <li>
+                      <li key={index}>
                         <img src={`${process.env.PUBLIC_URL}/image/star.svg`} alt="별점"/>
                       </li>
                     ))}
@@ -315,21 +315,11 @@ const Product = () => {
                 <div className="review_cell">
                   <div className="review_cell_upper">
                     <ul className="review_cell_stars">
-                      <li>
-                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                      </li>
-                      <li>
-                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                      </li>
-                      <li>
-                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                      </li>
-                      <li>
-                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                      </li>
-                      <li>
-                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                      </li>
+                      {Array.from({length : productInfo.reviewStars[0]}).map((_, index) => (
+                        <li key={index}>
+                          <img src={`${process.env.PUBLIC_URL}/image/star.svg`} alt="별점"/>
+                        </li>
+                      ))}
                     </ul>
                     <p className="review_cell_name">김**</p>
                     <p className="review_cell_date">2024.05.15</p>
@@ -343,21 +333,11 @@ const Product = () => {
                 <div className="review_cell">
                   <div className="review_cell_upper">
                     <ul className="review_cell_stars">
-                      <li>
-                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                      </li>
-                      <li>
-                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                      </li>
-                      <li>
-                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                      </li>
-                      <li>
-                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                      </li>
-                      <li>
-                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                      </li>
+                       {Array.from({length : productInfo.reviewStars[1]}).map((_, index) => (
+                        <li key={index}>
+                          <img src={`${process.env.PUBLIC_URL}/image/star.svg`} alt="별점"/>
+                        </li>
+                      ))}
                     </ul>
                     <p className="review_cell_name">김**</p>
                     <p className="review_cell_date">2024.05.15</p>

@@ -493,6 +493,10 @@
             line-height: 36px;
             color: $primary-content;
             font-weight: 500;
+
+            &:hover{
+              background:$primary-light-gray;
+            }
           }
         }
 
@@ -774,6 +778,11 @@
         background: $primary-content;
         color: #fff;
         border-radius: 8px;
+
+        &:hover{
+          background:$primary-semilight-gray;
+          color:$primary-content;
+        }
       }
     }
   }

@@ -17,6 +17,7 @@ export const ShopData = {
       shipPrice: 3000,
       totalPrice: 20300,
       colorPicks: ["#fff", "#D1D5DC", "#E5E7EB", "#1E2939"],
+      reviewStars : [5, 4]
     },
   ],
 };
