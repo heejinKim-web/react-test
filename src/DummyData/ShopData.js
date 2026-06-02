@@ -8,6 +8,8 @@ export const ShopData = {
         "product4.png",
         "product5.png",
       ],
+      stars : 5,
+      reviewCount: 128,
       originPrice: 29000,
       isSale: "Y",
       saleRate: 30,

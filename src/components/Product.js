@@ -137,23 +137,13 @@ const Product = () => {
               <div className="product_shop_buy_upper">
                 <div className="product_stars">
                   <ul className="stars">
-                    <li>
-                      <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                    </li>
-                    <li>
-                      <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                    </li>
-                    <li>
-                      <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                    </li>
-                    <li>
-                      <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                    </li>
-                    <li>
-                      <img src={`${process.env.PUBLIC_URL}/image/star.svg`} />
-                    </li>
+                    {Array.from({length : productInfo.stars}).map((_, index) => (
+                      <li>
+                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} alt="별점"/>
+                      </li>
+                    ))}
                   </ul>
-                  <p className="product_review_count">(128)</p>
+                  <p className="product_review_count">({productInfo.reviewCount.toLocaleString()})</p>
                 </div>
                 <div className="product_name_box">
                   <h1>로우박스</h1>
