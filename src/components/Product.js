@@ -28,6 +28,10 @@ const Product = () => {
   /*swiper*/
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
+  /*dummyData 데이터 가져오기*/
+  const [shopData, setShopData] = useState(ShopData);
+  const productInfo = shopData.productData[0];
+
   /*tabs*/
   const tabs = [
     {
@@ -40,7 +44,7 @@ const Product = () => {
     },
     {
       tabid: 3,
-      tabname: "리뷰 (128)",
+      tabname: `리뷰 (${productInfo.reviewCount ? productInfo.reviewCount : 0})`,
     },
     {
       tabid: 4,
@@ -52,10 +56,6 @@ const Product = () => {
   const tabOnClick = (id) => {
     setTabId(id);
   };
-
-  /*dummyData 데이터 가져오기*/
-  const [shopData, setShopData] = useState(ShopData);
-  const productInfo = shopData.productData[0];
 
   /*swiper slide img*/
   const slideImg = productInfo.productImg;
@@ -93,6 +93,9 @@ const Product = () => {
       setJjim(false);
     }
   } 
+
+  /*사이즈 데이터*/
+  const [size, setSize] = useState("");
 
   return (
     <div className="product" ref={pageRef}>
@@ -146,8 +149,8 @@ const Product = () => {
                   <p className="product_review_count">({productInfo.reviewCount.toLocaleString()})</p>
                 </div>
                 <div className="product_name_box">
-                  <h1>로우박스</h1>
-                  <p>깔끔한 디자인의 다용도 수납 박스</p>
+                  <h1>{productInfo.productName}</h1>
+                  <p>{productInfo.productDesc}</p>
                 </div>
                 <div className="product_price">
                   <p className="sale_percent">
@@ -186,6 +189,8 @@ const Product = () => {
                     type="text"
                     className="size_inputbox"
                     placeholder="사이즈를 작성해주세요."
+                    value={size}
+                    onChange={(e) => setSize(e.target.value)}
                   />
                 </div>
                 <div className="product_count">
@@ -206,7 +211,7 @@ const Product = () => {
                 <div className="total_price">
                   <p className="total_price_title">총 상품금액</p>
                   <p className="total_price_number">
-                    {productInfo.totalPrice.toLocaleString()}원
+                    {(productInfo.salePrice * count).toLocaleString()}원
                   </p>
                 </div>
                 <div className="shop_buy_buttons">
@@ -312,42 +317,26 @@ const Product = () => {
             )}
             {tabid === 3 && (
               <div className="tab_review_info">
-                <div className="review_cell">
-                  <div className="review_cell_upper">
-                    <ul className="review_cell_stars">
-                      {Array.from({length : productInfo.reviewStars[0]}).map((_, index) => (
-                        <li key={index}>
-                          <img src={`${process.env.PUBLIC_URL}/image/star.svg`} alt="별점"/>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="review_cell_name">김**</p>
-                    <p className="review_cell_date">2024.05.15</p>
-                  </div>
-                  <div className="review_cell_down">
-                    <p className="review_content">
-                      정리정돈하기 너무 좋아요. 색상도 예쁘고 튼튼합니다!
-                    </p>
-                  </div>
+                {productInfo.reviews.map((review, index) => (
+                  <div className="review_cell" key={index}>
+                    <div className="review_cell_upper">
+                      <ul className="review_cell_stars">
+                        {Array.from({length : review.stars}).map((_, index) => (
+                          <li key={index}>
+                            <img src={`${process.env.PUBLIC_URL}/image/star.svg`} alt="별점"/>
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="review_cell_name">{review.name}</p>
+                      <p className="review_cell_date">{review.date}</p>
+                    </div>
+                    <div className="review_cell_down">
+                      <p className="review_content">
+                        {review.content}
+                      </p>
+                    </div>
                 </div>
-                <div className="review_cell">
-                  <div className="review_cell_upper">
-                    <ul className="review_cell_stars">
-                       {Array.from({length : productInfo.reviewStars[1]}).map((_, index) => (
-                        <li key={index}>
-                          <img src={`${process.env.PUBLIC_URL}/image/star.svg`} alt="별점"/>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="review_cell_name">김**</p>
-                    <p className="review_cell_date">2024.05.15</p>
-                  </div>
-                  <div className="review_cell_down">
-                    <p className="review_content">
-                      정리정돈하기 너무 좋아요. 색상도 예쁘고 튼튼합니다!
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             )}
             {tabid === 4 && (
