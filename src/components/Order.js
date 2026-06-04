@@ -4,6 +4,7 @@ import Footer from "./common/Footer";
 
 import { OrderData } from '../DummyData/OrderData';
 
+/*accordion 설정*/
 const Order = () => {
   const accordions = [
     { id: 1, content: "개인정보 수집 및 이용 동의 (필수)" },
@@ -24,7 +25,7 @@ const Order = () => {
 
   /*dummyData 불러오기*/
   const [dummyData, setDummyData] = useState(OrderData);
-  const orderData = dummyData.orderData[0];
+  const orderData = dummyData?.orderData?.[0] || {};
 
   /*개인정보/배송지 설정*/
   const [ordername, setOrderName] = useState("");
@@ -125,7 +126,7 @@ const Order = () => {
         <div className="cell order_coupon">
           <div className="order_coupon_title">
             <h2>쿠폰</h2>
-            <p>0장 보유</p>
+            <p>{orderData.coupons.length || 0}장 보유</p>
           </div>
         </div>
         <div className="cell order_credit">
@@ -197,7 +198,7 @@ const Order = () => {
             <ul>
               <li>
                 <p className="order_price_cate">상품금액</p>
-                <p className="price_number">365,000원</p>
+                <p className="price_number">{orderData.itemPrice.toLocaleString()}원</p>
               </li>
               <li>
                 <p className="order_price_cate">배송비</p>
@@ -211,7 +212,7 @@ const Order = () => {
           </div>
           <div className="order_price_total">
             <p className="price_total_cate">총 결제금액</p>
-            <p className="price_total_number">{orderData.totalPrice.toLocaleString()}원</p>
+            <p className="price_total_number">{(orderData.totalPrice - points).toLocaleString()}원</p>
           </div>
         </div>
         <div className="cell order_payment">
@@ -256,7 +257,7 @@ const Order = () => {
         </div>
         <div className="order_button">
           <p>주문 내용을 확인하였으며, 정보 제공 등에 동의합니다.</p>
-          <button>{orderData.totalPrice.toLocaleString()} won 결제하기</button>
+          <button>{(orderData.totalPrice - points).toLocaleString()} won 결제하기</button>
           <p>*가상계좌 입금시 안내된 시간 내에 입금 완료하셔야 합니다.</p>
         </div>
       </div>
