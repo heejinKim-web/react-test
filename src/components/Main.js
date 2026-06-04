@@ -52,7 +52,7 @@ const Main = () => {
           }}
         >
           {mainSliderItems?.slice(0, 6).map((item, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={item.id}>
               <Link to={item.link}>
                 <img
                   src={`${process.env.PUBLIC_URL}/image/${item.imageUrl}`}
@@ -77,7 +77,7 @@ const Main = () => {
         <div className="goods_list">
           <ul>
             {mainGoodsItems?.slice(0, goodsCount).map((good, index) => (
-              <li key={index}>
+              <li key={good.id}>
                 <Link to={good.link}>
                   <div className="goods_image">
                     <img
