@@ -23,7 +23,8 @@ export const ShopData = {
       reviews : [
         {stars : 5, content : '정리정돈하기 너무 좋아요. 색상도 예쁘고 튼튼합니다!', name : '김**', date : '2024.05.15'},
         {stars : 4, content : '정리정돈하기 너무 좋아요. 색상도 예쁘고 튼튼합니다!', name : '신**', date : '2024.05.17'}
-      ]
+      ],
+      inquiry : []
     },
   ],
 };

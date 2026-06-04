@@ -23,3 +23,9 @@
   align-items: $align;
   gap: $gap;
 }
+
+@mixin empty_cell {
+  font-size:16px;
+  color:$primary-gray;
+  text-align:center;
+}

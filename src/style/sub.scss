@@ -397,15 +397,17 @@
           }
         }
       }
+
+      .empty {
+        @include empty_cell;
+      }
     }
 
     .tab_question {
       padding: 48px 0;
-      text-align: center;
 
       .empty {
-        font-size: 16px;
-        color: $primary-gray;
+        @include empty_cell;
       }
     }
   }

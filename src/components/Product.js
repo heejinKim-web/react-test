@@ -317,7 +317,8 @@ const Product = () => {
             )}
             {tabid === 3 && (
               <div className="tab_review_info">
-                {productInfo.reviews?.map((review, index) => (
+                {productInfo.reviews && productInfo.reviews.length > 0 ? (
+                  productInfo.reviews?.map((review, index) => (
                   <div className="review_cell" key={index}>
                     <div className="review_cell_upper">
                       <ul className="review_cell_stars">
@@ -336,12 +337,19 @@ const Product = () => {
                       </p>
                     </div>
                 </div>
-                ))}
+                ))
+                ) : (
+                  <p className="empty">등록된 리뷰가 없습니다.</p>
+                )}
               </div>
             )}
             {tabid === 4 && (
               <div className="tab_question">
-                <p className="empty">등록된 문의가 없습니다.</p>
+                {productInfo.inquiry && productInfo.inquiry.length > 0 ? (
+                  <p className="empty">등록된 문의가 없습니다.</p>
+                ) : (
+                  <p className="empty">등록된 문의가 없습니다.</p>
+                )}  
               </div>
             )}
           </div>
