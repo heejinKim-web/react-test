@@ -28,11 +28,18 @@ const Order = () => {
   const orderData = dummyData?.orderData?.[0] || {};
 
   /*개인정보/배송지 설정*/
-  const [ordername, setOrderName] = useState("");
-  const [ordercellphone, setOrderCellphone] = useState("");
-  const [orderzipcode, setOrderZipCode] = useState("");
-  const [orderaddress1, setOrderAddress1] = useState("");
-  const [orderaddress2, setOrderAddress2] = useState("");
+  const [orderInfo, setOrderInfo] = useState({
+      ordername: "",
+      ordercellphone: "",
+      orderzipcode: "",
+      orderaddress1: "",
+      orderaddress2: ""
+  });
+
+  const onChange = (e) => {
+    const {name, value} = e.target;
+    setOrderInfo({...orderInfo, [name] : value});
+  } 
 
   /*포인트 사용*/
   const [points, setPoints] = useState(0);
@@ -64,8 +71,8 @@ const Order = () => {
                 className="full_input"
                 id="name"
                 name="name"
-                value={ordername}
-                onChange={(e) => setOrderName(e.target.value)}
+                value={orderInfo.ordername}
+                onChange={(e) => onChange(e.target.value)}
               />
             </div>
           </div>
@@ -78,8 +85,8 @@ const Order = () => {
                 id="cellphone"
                 name="cellphone"
                 className="input_not_full not_full_1"
-                value={ordercellphone}
-                onChange={(e) => setOrderCellphone(e.target.value)}
+                value={orderInfo.ordercellphone}
+                onChange={(e) => onChange(e.target.value)}
               />
               <button className="order_button">인증</button>
             </div>
@@ -93,8 +100,8 @@ const Order = () => {
                 id="zipcode"
                 placeholder="우편번호"
                 name="zipcode"
-                value={orderzipcode}
-                onChange={(e) => setOrderZipCode(e.target.value)}
+                value={orderInfo.orderzipcode}
+                onChange={(e) => onChange(e.target.value)}
               />
               <button className="order_button">우편번호</button>
             </div>
@@ -106,8 +113,8 @@ const Order = () => {
                 placeholder="기본주소"
                 name="address1"
                 aria-label="기본주소"
-                value={orderaddress1}
-                onChange={(e) => setOrderAddress1(e.target.value)}
+                value={orderInfo.orderaddress1}
+                onChange={(e) => onChange(e.target.value)}
               />
             </div>
             <div className="input_div_inner">
@@ -117,8 +124,8 @@ const Order = () => {
                 id="address2"
                 placeholder="우편번호"
                 name="address2"
-                value={orderaddress2}
-                onChange={(e) => setOrderAddress2(e.target.value)}
+                value={orderInfo.orderaddress2}
+                onChange={(e) => onChange(e.target.value)}
               />
             </div>
           </div>
