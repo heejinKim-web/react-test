@@ -70,7 +70,7 @@ const Order = () => {
                 placeholder="이름을 입력하세요"
                 className="full_input"
                 id="name"
-                name="name"
+                name="ordername"
                 value={orderInfo.ordername}
                 onChange={(e) => onChange(e.target.value)}
               />
@@ -83,7 +83,7 @@ const Order = () => {
                 type="text"
                 placeholder="010-0000-0000"
                 id="cellphone"
-                name="cellphone"
+                name="ordercellphone"
                 className="input_not_full not_full_1"
                 value={orderInfo.ordercellphone}
                 onChange={(e) => onChange(e.target.value)}
@@ -99,7 +99,7 @@ const Order = () => {
                 className="input_not_full not_full_2"
                 id="zipcode"
                 placeholder="우편번호"
-                name="zipcode"
+                name="orderzipcode"
                 value={orderInfo.orderzipcode}
                 onChange={(e) => onChange(e.target.value)}
               />
@@ -111,7 +111,7 @@ const Order = () => {
                 className="full_input"
                 id="address1"
                 placeholder="기본주소"
-                name="address1"
+                name="orderaddress1"
                 aria-label="기본주소"
                 value={orderInfo.orderaddress1}
                 onChange={(e) => onChange(e.target.value)}
@@ -123,7 +123,7 @@ const Order = () => {
                 className="full_input"
                 id="address2"
                 placeholder="우편번호"
-                name="address2"
+                name="orderaddress2"
                 value={orderInfo.orderaddress2}
                 onChange={(e) => onChange(e.target.value)}
               />
