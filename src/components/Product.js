@@ -4,7 +4,7 @@ import Footer from "./common/Footer";
 import "../style/sub.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { Navigation, Thumbs } from "swiper/modules";
 
 import { ShopData } from "../DummyData/ShopData";
 
@@ -106,7 +106,7 @@ const Product = () => {
             <Swiper
               thumbs={{ swiper: thumbsSwiper }}
               spaceBetween={10}
-              modules={[FreeMode, Navigation, Thumbs]}
+              modules={[Navigation, Thumbs]}
               className="productSwiper"
             >
               {slideImg?.map((slide, index) => (
@@ -121,9 +121,8 @@ const Product = () => {
               onSwiper={setThumbsSwiper}
               slidesPerView={5}
               spaceBetween={12}
-              FreeMode={true}
               watchSlidesProgress={true}
-              modules={[FreeMode, Navigation, Thumbs]}
+              modules={[Navigation, Thumbs]}
               className="productSwiper2"
             >
               {slideImg?.map((slide, index) => (
