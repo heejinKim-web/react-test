@@ -63,13 +63,13 @@ const Order = () => {
         <div className="cell order_address">
           <h2>배송지</h2>
           <div className="input_div order_name">
-            <label htmlFor="name">수령인</label>
+            <label htmlFor="ordername">수령인</label>
             <div className="input_div_inner">
               <input
                 type="text"
                 placeholder="이름을 입력하세요"
                 className="full_input"
-                id="name"
+                id="ordername"
                 name="ordername"
                 value={orderInfo.ordername}
                 onChange={(e) => onChange(e.target.value)}
@@ -77,12 +77,12 @@ const Order = () => {
             </div>
           </div>
           <div className="input_div order_cellphone">
-            <label htmlFor="cellphone">휴대폰</label>
+            <label htmlFor="ordercellphone">휴대폰</label>
             <div className="input_div_inner">
               <input
                 type="text"
                 placeholder="010-0000-0000"
-                id="cellphone"
+                id="ordercellphone"
                 name="ordercellphone"
                 className="input_not_full not_full_1"
                 value={orderInfo.ordercellphone}
@@ -92,12 +92,12 @@ const Order = () => {
             </div>
           </div>
           <div className="input_div order_address_input">
-            <label htmlFor="zipcode">주소</label>
+            <label htmlFor="orderzipcode">주소</label>
             <div className="input_div_inner">
               <input
                 type="text"
                 className="input_not_full not_full_2"
-                id="zipcode"
+                id="orderzipcode"
                 placeholder="우편번호"
                 name="orderzipcode"
                 value={orderInfo.orderzipcode}
@@ -109,7 +109,7 @@ const Order = () => {
               <input
                 type="text"
                 className="full_input"
-                id="address1"
+                id="orderaddress1"
                 placeholder="기본주소"
                 name="orderaddress1"
                 aria-label="기본주소"
@@ -121,7 +121,7 @@ const Order = () => {
               <input
                 type="text"
                 className="full_input"
-                id="address2"
+                id="orderaddress2"
                 placeholder="우편번호"
                 name="orderaddress2"
                 value={orderInfo.orderaddress2}
