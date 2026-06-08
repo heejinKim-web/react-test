@@ -72,7 +72,7 @@ const Order = () => {
                 id="ordername"
                 name="ordername"
                 value={orderInfo.ordername}
-                onChange={(e) => onChange(e.target.value)}
+                onChange={onChange}
               />
             </div>
           </div>
@@ -86,7 +86,7 @@ const Order = () => {
                 name="ordercellphone"
                 className="input_not_full not_full_1"
                 value={orderInfo.ordercellphone}
-                onChange={(e) => onChange(e.target.value)}
+                onChange={onChange}
               />
               <button className="order_button">인증</button>
             </div>
@@ -101,7 +101,7 @@ const Order = () => {
                 placeholder="우편번호"
                 name="orderzipcode"
                 value={orderInfo.orderzipcode}
-                onChange={(e) => onChange(e.target.value)}
+                onChange={onChange}
               />
               <button className="order_button">우편번호</button>
             </div>
@@ -114,7 +114,7 @@ const Order = () => {
                 name="orderaddress1"
                 aria-label="기본주소"
                 value={orderInfo.orderaddress1}
-                onChange={(e) => onChange(e.target.value)}
+                onChange={onChange}
               />
             </div>
             <div className="input_div_inner">
@@ -125,7 +125,7 @@ const Order = () => {
                 placeholder="우편번호"
                 name="orderaddress2"
                 value={orderInfo.orderaddress2}
-                onChange={(e) => onChange(e.target.value)}
+                onChange={onChange}
               />
             </div>
           </div>
