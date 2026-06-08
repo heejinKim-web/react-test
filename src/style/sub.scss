@@ -578,8 +578,7 @@
           margin: 0;
 
           &:checked {
-            background: $primary-content url("../image/checked.svg") no-repeat center;
-            background-size:100%;
+            @include checked_box;
           }
         }
       }
@@ -720,8 +719,7 @@
           border: 1px solid $primary-semilight-gray;
 
           &:checked{
-            background: $primary-content url("../image/checked.svg") no-repeat center;
-            background-size:100%;
+            @include checked_box;
           }
         }
       }

@@ -29,3 +29,8 @@
   color:$primary-gray;
   text-align:center;
 }
+
+@mixin checked_box {
+  background: $primary-content url("../image/checked.svg") no-repeat center;
+  background-size:100%;
+}
