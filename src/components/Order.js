@@ -63,7 +63,7 @@ const Order = () => {
     <div className="order">
       <Header />
       <div className="order_container">
-        <form>
+        <form action="">
           <div className="order_title">
             <h1>Order / Payment</h1>
           </div>
