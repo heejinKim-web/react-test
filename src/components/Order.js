@@ -43,7 +43,8 @@ const Order = () => {
 
   /*포인트 사용*/
   const [points, setPoints] = useState(0);
-  const usePoints = () => {
+  const usePoints = (e) => {
+    e.preventDefault();
     setPoints(orderData.points);
   }
 
@@ -52,6 +53,11 @@ const Order = () => {
 
   /*결제수단 선택*/
   const [payment, setPayment] = useState("");
+
+  /*button form 전송 막기*/
+  const PreventDefault = (e) => {
+    e.preventDefault();
+  }
 
   return (
     <div className="order">
@@ -89,7 +95,7 @@ const Order = () => {
                   value={orderInfo.ordercellphone}
                   onChange={onChange}
                 />
-                <button className="order_button">인증</button>
+                <button className="order_button" onClick={PreventDefault}>인증</button>
               </div>
             </div>
             <div className="input_div order_address_input">
@@ -104,7 +110,7 @@ const Order = () => {
                   value={orderInfo.orderzipcode}
                   onChange={onChange}
                 />
-                <button className="order_button">우편번호</button>
+                <button className="order_button" onClick={PreventDefault}>우편번호</button>
               </div>
               <div className="input_div_inner">
                 <input
