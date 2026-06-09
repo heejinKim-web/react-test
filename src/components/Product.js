@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
-import "../style/sub.scss";
+import "../style/product.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs } from "swiper/modules";
