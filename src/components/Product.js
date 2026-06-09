@@ -87,12 +87,12 @@ const Product = () => {
   const [jjim, setJjim] = useState(false);
   const onClickJjim = (e) => {
     e.preventDefault();
-    if(!jjim){
+    if (!jjim) {
       setJjim(true);
-    }else{
+    } else {
       setJjim(false);
     }
-  } 
+  };
 
   /*사이즈 데이터*/
   const [size, setSize] = useState("");
@@ -139,13 +139,20 @@ const Product = () => {
               <div className="product_shop_buy_upper">
                 <div className="product_stars">
                   <ul className="stars">
-                    {Array.from({length : productInfo.stars}).map((_, index) => (
-                      <li key={index}>
-                        <img src={`${process.env.PUBLIC_URL}/image/star.svg`} alt="별점"/>
-                      </li>
-                    ))}
+                    {Array.from({ length: productInfo.stars }).map(
+                      (_, index) => (
+                        <li key={index}>
+                          <img
+                            src={`${process.env.PUBLIC_URL}/image/star.svg`}
+                            alt="별점"
+                          />
+                        </li>
+                      ),
+                    )}
                   </ul>
-                  <p className="product_review_count">({productInfo.reviewCount.toLocaleString()})</p>
+                  <p className="product_review_count">
+                    ({productInfo.reviewCount.toLocaleString()})
+                  </p>
                 </div>
                 <div className="product_name_box">
                   <h1>{productInfo.productName}</h1>
@@ -222,7 +229,11 @@ const Product = () => {
                     <p>
                       <span>
                         <img
-                          src={jjim ? `${process.env.PUBLIC_URL}/image/heart-selected.svg` : `${process.env.PUBLIC_URL}/image/heart.svg`}
+                          src={
+                            jjim
+                              ? `${process.env.PUBLIC_URL}/image/heart-selected.svg`
+                              : `${process.env.PUBLIC_URL}/image/heart.svg`
+                          }
                         />
                       </span>
                       찜하기
@@ -318,25 +329,28 @@ const Product = () => {
               <div className="tab_review_info">
                 {productInfo.reviews && productInfo.reviews.length > 0 ? (
                   productInfo.reviews?.map((review, index) => (
-                  <div className="review_cell" key={index}>
-                    <div className="review_cell_upper">
-                      <ul className="review_cell_stars">
-                        {Array.from({length : review.stars}).map((_, index) => (
-                          <li key={index}>
-                            <img src={`${process.env.PUBLIC_URL}/image/star.svg`} alt="별점"/>
-                          </li>
-                        ))}
-                      </ul>
-                      <p className="review_cell_name">{review.name}</p>
-                      <p className="review_cell_date">{review.date}</p>
+                    <div className="review_cell" key={index}>
+                      <div className="review_cell_upper">
+                        <ul className="review_cell_stars">
+                          {Array.from({ length: review.stars }).map(
+                            (_, index) => (
+                              <li key={index}>
+                                <img
+                                  src={`${process.env.PUBLIC_URL}/image/star.svg`}
+                                  alt="별점"
+                                />
+                              </li>
+                            ),
+                          )}
+                        </ul>
+                        <p className="review_cell_name">{review.name}</p>
+                        <p className="review_cell_date">{review.date}</p>
+                      </div>
+                      <div className="review_cell_down">
+                        <p className="review_content">{review.content}</p>
+                      </div>
                     </div>
-                    <div className="review_cell_down">
-                      <p className="review_content">
-                        {review.content}
-                      </p>
-                    </div>
-                </div>
-                ))
+                  ))
                 ) : (
                   <p className="empty">등록된 리뷰가 없습니다.</p>
                 )}
@@ -348,7 +362,7 @@ const Product = () => {
                   <p className="empty">등록된 문의가 없습니다.</p>
                 ) : (
                   <p className="empty">등록된 문의가 없습니다.</p>
-                )}  
+                )}
               </div>
             )}
           </div>
