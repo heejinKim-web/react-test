@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 /*mixin*/
 @mixin cell_title {
   font-size: 18px;
@@ -25,12 +27,12 @@
 }
 
 @mixin empty_cell {
-  font-size:16px;
-  color:$primary-gray;
-  text-align:center;
+  font-size: 16px;
+  color: $primary-gray;
+  text-align: center;
 }
 
 @mixin checked_box {
   background: $primary-content url("../image/checked.svg") no-repeat center;
-  background-size:100%;
+  background-size: 100%;
 }

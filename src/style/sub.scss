@@ -1,5 +1,5 @@
-@import "mixins";
-@import "variables";
+@use "variables" as *;
+@use "mixins" as *;
 
 /*product*/
 .product {
@@ -216,8 +216,8 @@
             width: calc(50% - 12px);
             font-size: 16px;
 
-            &:hover{
-              background:$primary-light-gray;
+            &:hover {
+              background: $primary-light-gray;
             }
           }
 
@@ -232,8 +232,8 @@
             color: $primary-white;
             border: none;
 
-            &:hover{
-              color:$primary-content;
+            &:hover {
+              color: $primary-content;
             }
           }
         }
@@ -248,8 +248,8 @@
             background: #fff;
             width: calc(50% - 12px);
 
-            &:hover{
-              background:$primary-light-gray;
+            &:hover {
+              background: $primary-light-gray;
             }
 
             p {
@@ -496,8 +496,8 @@
             color: $primary-content;
             font-weight: 500;
 
-            &:hover{
-              background:$primary-light-gray;
+            &:hover {
+              background: $primary-light-gray;
             }
           }
         }
@@ -718,7 +718,7 @@
           border-radius: 4px;
           border: 1px solid $primary-semilight-gray;
 
-          &:checked{
+          &:checked {
             @include checked_box;
           }
         }
@@ -785,9 +785,9 @@
         color: #fff;
         border-radius: 8px;
 
-        &:hover{
-          background:$primary-semilight-gray;
-          color:$primary-content;
+        &:hover {
+          background: $primary-semilight-gray;
+          color: $primary-content;
         }
       }
     }
