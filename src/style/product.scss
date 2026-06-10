@@ -1,6 +1,8 @@
 @use "variables" as *;
 @use "mixins" as *;
 
+@import url("reset.scss");
+
 /*product*/
 .product {
   .product_upper_frame {
