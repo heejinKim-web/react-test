@@ -1,0 +1,76 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+@import url("reset.scss");
+
+.mypage_alert_popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+
+  &.pop_open {
+    display: block;
+  }
+
+  .mypage_alert_box {
+    position: absolute;
+    border-radius: 20px;
+    background: $primary-white;
+    padding: 16px;
+    width: 90%;
+    max-width: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    .mypage_alert_inner {
+      position: relative;
+
+      .mypage_alert_title {
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: 16px;
+        font-size: 16px;
+      }
+
+      .mypage_alert_content {
+        margin-bottom: 16px;
+        text-align: center;
+      }
+
+      .mypage_alert_buttons {
+        @include flex_set(center, center, 8px);
+
+        a {
+          display: block;
+          border-radius: 10px;
+          background: $primary-content;
+          color: $primary-white;
+          width: 180px;
+          text-align: center;
+          padding: 8px;
+
+          &:hover {
+            background: $primary-semilight-gray;
+            color: $primary-content;
+          }
+        }
+      }
+
+      .popup_close {
+        background: none;
+        color: $primary-content;
+        border: none;
+        font-size: 16px;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}

@@ -49,16 +49,6 @@
       width: calc(50% - 32px);
 
       .product_shop_buy_upper {
-        .product_stars {
-          @include flex_set(flex-start, flex-start, 8px);
-          margin-bottom: 8px;
-
-          .stars {
-            display: flex;
-            gap: 4px;
-          }
-        }
-
         .product_name_box {
           margin-bottom: 24px;
 
@@ -119,75 +109,15 @@
           }
         }
 
-        .color_picker {
+        .option_select_box {
           margin-bottom: 16px;
-          .color_pick_title {
-            color: $primary-content;
-            font-weight: 500;
-            margin-bottom: 8px;
-          }
-
-          .color_pick_module {
-            @include flex_set(flex-start, flex-start, 8px);
-            li {
-              width: 48px;
-              height: 48px;
-              background: gray;
-              border-radius: 100%;
-              border: 2px solid $primary-semilight-gray;
-
-              &.active {
-                border: 2px solid $primary-content;
-              }
-            }
-          }
-        }
-
-        .size_input {
-          margin-bottom: 16px;
-          .size_input_title {
-            color: $primary-content;
-            font-weight: 500;
-            margin-bottom: 8px;
-          }
-
-          .size_inputbox {
-            height: 47px;
-            border-radius: 10px;
-            border: 1px solid $primary-light-gray;
+          .option_select {
+            border: 1px solid $primary-semilight-gray;
             width: 100%;
-            padding: 0 18px;
-          }
-        }
-
-        .product_count {
-          margin-bottom: 24px;
-          .product_count_title {
-            color: $primary-content;
-            font-weight: 500;
-            margin-bottom: 8px;
-          }
-
-          .product_count_module {
-            @include flex_set(flex-start, flex-start, 12px);
-
-            .count_button {
-              width: 38px;
-              height: 38px;
-              line-height: 30px;
-              border-radius: 10px;
-              border: 1px solid $primary-light-gray;
-              background: #fff;
-              font-size: 18px;
-            }
-
-            .count_number {
-              font-size: 16px;
-              color: $primary-content;
-              width: 48px;
-              line-height: 38px;
-              text-align: center;
-            }
+            padding: 12px;
+            border-radius: 4px;
+            color: #4a5565;
+            background: url("../image/arrow.svg") no-repeat 98% center;
           }
         }
 
@@ -236,27 +166,6 @@
 
             &:hover {
               color: $primary-content;
-            }
-          }
-        }
-
-        .shop_share_buttons {
-          @include flex_set(flex-start, flex-start, 12px);
-
-          button {
-            padding: 12px 0;
-            border-radius: 10px;
-            border: 1px solid $primary-semilight-gray;
-            background: #fff;
-            width: calc(50% - 12px);
-
-            &:hover {
-              background: $primary-light-gray;
-            }
-
-            p {
-              @include flex_set(center, center, 8px);
-              width: 100%;
             }
           }
         }
