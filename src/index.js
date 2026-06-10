@@ -7,6 +7,8 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import Main from "./components/Main";
 import Product from "./components/Product";
 import Order from "./components/Order";
+import Inquiry from "./components/Inquiry";
+import MyPage from "./components/MyPage";
 
 const router = createHashRouter([
   {
@@ -20,6 +22,14 @@ const router = createHashRouter([
   {
     path: "/order",
     element: <Order />,
+  },
+  {
+    path: "/inquiry",
+    element: <Inquiry />,
+  },
+  {
+    path: "/mypage",
+    element: <MyPage />,
   },
 ]);
 

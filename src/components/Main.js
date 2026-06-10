@@ -38,7 +38,7 @@ const Main = () => {
   }
 
   return (
-    <div className="main">
+    <div className="main" style={{ paddingTop: isMobile ? "100px" : "" }}>
       <Header />
       <div className="main_visual">
         <Swiper

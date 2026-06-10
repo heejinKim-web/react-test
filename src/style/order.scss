@@ -64,6 +64,10 @@
             width: 100%;
           }
 
+          .textarea {
+            min-height: 300px;
+          }
+
           .input_not_full {
             @include input_style;
 

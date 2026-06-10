@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
 import "../style/order.scss";
@@ -60,8 +60,19 @@ const Order = () => {
     e.preventDefault();
   };
 
+  /*mobile 구분*/
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="order">
+    <div className="order" style={{ paddingTop: isMobile ? "100px" : "" }}>
       <Header />
       <div className="order_container">
         <form action="">

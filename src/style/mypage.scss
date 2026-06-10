@@ -1,0 +1,220 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+@import url("reset.scss");
+
+.mypage {
+  .mypage_container {
+    padding-top: 32px;
+
+    .mypage_title {
+      text-align: center;
+      margin-bottom: 32px;
+
+      h1 {
+        font-size: 24px;
+        color: $primary-content;
+        font-weight: 500;
+
+        &:after {
+          content: "";
+          width: 64px;
+          height: 2px;
+          background: $primary-content;
+          display: block;
+          margin: 0 auto;
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .mypage_section_title {
+      margin-bottom: 24px;
+      text-align: center;
+      color: $primary-content;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .mypage_order_list_box {
+      margin-bottom: 32px;
+
+      .mypage_order_list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+
+        li {
+          width: calc(20% - 24px);
+          .goods_image {
+            margin-bottom: 12px;
+            img {
+              width: 100%;
+            }
+          }
+
+          .goods_content {
+            h2 {
+              font-weight: 600;
+              line-height: 1.8;
+              color: $primary-content;
+            }
+
+            p {
+              color: $primary-content;
+            }
+          }
+        }
+      }
+    }
+
+    .mypage_new_order {
+      background: $primary-light-gray;
+      padding-top: 32px;
+
+      .new_inquiry_container {
+        width: 90%;
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 32px 0;
+
+        .cell {
+          background: $primary-white;
+          padding: 24px;
+          border-radius: 10px;
+          margin-bottom: 24px;
+
+          .input_div {
+            margin-bottom: 16px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            label {
+              color: $primary-gray;
+              margin-bottom: 8px;
+              display: block;
+            }
+
+            .input_div_inner {
+              .full_input {
+                @include input_style;
+                width: 100%;
+              }
+
+              .textarea {
+                min-height: 200px;
+              }
+            }
+          }
+        }
+
+        .order_agreement {
+          h2 {
+            font-size: 18px;
+            color: $primary-content;
+            font-weight: 500;
+            margin-bottom: 16px;
+          }
+
+          .order_agreement_check {
+            @include flex_set(flex-start, center, 8px);
+            padding-bottom: 12px;
+            border-bottom: 1px solid $primary-semilight-gray;
+
+            input {
+              width: 16px;
+              height: 16px;
+              background: $primary-light-gray;
+              border-radius: 4px;
+              border: 1px solid $primary-semilight-gray;
+
+              &:checked {
+                background: $primary-content url("../image/checked.svg")
+                  no-repeat center;
+                background-size: 100%;
+              }
+            }
+          }
+
+          .agreement_accordion {
+            padding-top: 12px;
+
+            .accordion {
+              margin-bottom: 12px;
+              cursor: pointer;
+
+              &.active {
+                .accordion_content {
+                  display: block;
+                }
+              }
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              .accordion_title {
+                font-weight: 500;
+                color: $primary-gray;
+                position: relative;
+
+                &:after {
+                  content: "";
+                  width: 16px;
+                  height: 16px;
+                  background: url("../image/arrow.svg") no-repeat center;
+                  position: absolute;
+                  right: 0;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+              }
+
+              .accordion_content {
+                display: none;
+                padding: 16px;
+                background: $primary-light-gray;
+                margin-top: 8px;
+              }
+            }
+          }
+        }
+
+        .order_button {
+          text-align: center;
+
+          button {
+            margin: 16px 0 24px 0;
+            border: none;
+            width: 100%;
+            padding: 13px;
+            background: $primary-content;
+            color: #fff;
+            border-radius: 8px;
+
+            &:hover {
+              background: $primary-semilight-gray;
+              color: $primary-content;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .mypage {
+    .mypage_container {
+      .mypage_order_list_box {
+        .mypage_order_list {
+          li {
+            width: calc(50% - 12px);
+          }
+        }
+      }
+    }
+  }
+}

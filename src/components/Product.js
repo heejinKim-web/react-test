@@ -10,8 +10,16 @@ import { ShopData } from "../DummyData/ShopData";
 
 const Product = () => {
   const pageRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
     const timer = setTimeout(() => {
       if (pageRef.current) {
         pageRef.current.scrollTo(0, 0);
@@ -98,7 +106,11 @@ const Product = () => {
   const [size, setSize] = useState("");
 
   return (
-    <div className="product" ref={pageRef}>
+    <div
+      className="product"
+      style={{ paddingTop: isMobile ? "100px" : "" }}
+      ref={pageRef}
+    >
       <Header />
       <div className="container">
         <div className="product_upper_frame">
