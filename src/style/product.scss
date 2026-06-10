@@ -193,7 +193,7 @@
 
         .total_price {
           padding: 16px 0;
-          @include flex_set(space-between, center);
+          @include flex_set(space-between, center, 0);
           border-top: 1px solid $primary-semilight-gray;
 
           .total_price_title {
