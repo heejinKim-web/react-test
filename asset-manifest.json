@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/react-test/static/css/main.849905a2.css",
-    "main.js": "/react-test/static/js/main.3dc39da1.js",
+    "main.css": "/react-test/static/css/main.619e1615.css",
+    "main.js": "/react-test/static/js/main.9d9f7f01.js",
     "static/js/453.fd2f0c4a.chunk.js": "/react-test/static/js/453.fd2f0c4a.chunk.js",
     "index.html": "/react-test/index.html",
     "static/media/checked.svg": "/react-test/static/media/checked.bf759a03187fcbc989ef.svg",
     "static/media/radio_selected.svg": "/react-test/static/media/radio_selected.cb2ccaebdd4844b12e1d.svg",
     "static/media/arrow.svg": "/react-test/static/media/arrow.0974edc437bb8d68257d.svg",
-    "main.849905a2.css.map": "/react-test/static/css/main.849905a2.css.map",
-    "main.3dc39da1.js.map": "/react-test/static/js/main.3dc39da1.js.map",
+    "main.619e1615.css.map": "/react-test/static/css/main.619e1615.css.map",
+    "main.9d9f7f01.js.map": "/react-test/static/js/main.9d9f7f01.js.map",
     "453.fd2f0c4a.chunk.js.map": "/react-test/static/js/453.fd2f0c4a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.849905a2.css",
-    "static/js/main.3dc39da1.js"
+    "static/css/main.619e1615.css",
+    "static/js/main.9d9f7f01.js"
   ]
 }
