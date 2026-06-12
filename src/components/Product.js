@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
 import "../style/product.scss";
@@ -136,6 +137,11 @@ const Product = () => {
                       </option>
                     ))}
                   </select>
+                </div>
+                <div className="new_inquiry_box">
+                  <Link to="/inquiry" className="new_inquiry">
+                    신규 수량 및 디자인 문의하기
+                  </Link>
                 </div>
                 <div className="total_price">
                   <p className="total_price_title">총 상품금액</p>

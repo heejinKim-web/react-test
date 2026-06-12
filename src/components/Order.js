@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
 import "../style/order.scss";
@@ -60,15 +60,30 @@ const Order = () => {
     e.preventDefault();
   };
 
-  /*mobile 구분*/
   const [isMobile, setIsMobile] = useState(false);
+  const pageRef = useRef(null);
+
   useEffect(() => {
+    /*mobile 구분*/
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1024);
     };
 
     handleResize();
     window.addEventListener("resize", handleResize);
+
+    /*페이지 위로 당기기*/
+    const timer = setTimeout(() => {
+      if (pageRef.current) {
+        pageRef.current.scrollTo(0, 0);
+      }
+
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTo(0, 0);
+      document.body.scrollTo(0, 0);
+    }, 50);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (

@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
 import "../style/order.scss";
 
 const Inquiry = () => {
-  /*mobile 구분*/
+  const pageRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+
+  /*mobile 구분*/
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1024);
@@ -13,6 +15,19 @@ const Inquiry = () => {
 
     handleResize();
     window.addEventListener("resize", handleResize);
+
+    /*페이지 위로 당기기*/
+    const timer = setTimeout(() => {
+      if (pageRef.current) {
+        pageRef.current.scrollTo(0, 0);
+      }
+
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTo(0, 0);
+      document.body.scrollTo(0, 0);
+    }, 50);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const accordions = [
@@ -36,6 +51,7 @@ const Inquiry = () => {
     <div
       className="inquiry order"
       style={{ paddingTop: isMobile ? "100px" : "" }}
+      ref={pageRef}
     >
       <Header />
       <div className="order_container">

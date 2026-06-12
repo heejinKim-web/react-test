@@ -121,6 +121,22 @@
           }
         }
 
+        .new_inquiry_box {
+          margin-bottom: 16px;
+
+          .new_inquiry {
+            display: inline-block;
+            color: $primary-white;
+            padding: 5px;
+            border-radius: 5px;
+            background: $primary-gray;
+
+            &:hover {
+              background: $primary-red;
+            }
+          }
+        }
+
         .total_price {
           padding: 16px 0;
           @include flex_set(space-between, center, 0);
